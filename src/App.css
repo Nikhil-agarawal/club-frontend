@@ -1,0 +1,302 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Full reset to ensure background covers entire screen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root, .App {
+  background-color: #121f36;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+ /* Dark blue background */
+  font-family: 'Poppins', sans-serif;
+  color: #e2e8f0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y:auto
+}
+
+/* Root element - covers full screen */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main App Container */
+.App {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121f36; /* Dark blue background matching the image */
+  text-align: center;
+  flex: 1;
+}
+
+/* App Logo */
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  margin-bottom: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Main Content Area */
+.App-header {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Create spacing for content below navbar */
+.Routes {
+ /* Adjust based on your navbar height */
+  width: 100%;
+
+  margin-top:110px;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: #8ab4f8; /* Light blue for headings */
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* About Us section heading style */
+.about-heading {
+  color: #7d91f7; /* Purple-blue color like "About Us" in the image */
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+p {
+  color: #CBD5E1; /* Light text color */
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+.App-link {
+  color: #4FC3F7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #81D4FA;
+}
+
+/* Form containers - ensure proper spacing and width */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #121c3d;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Login specific styling */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0d1530;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #121c3d;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styling for components */
+.card {
+  background-color: #121c3d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Form elements */
+input, select, textarea {
+  background-color: #1a2445;
+  border: 1px solid #2a3555;
+  color: #e2e8f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #4FC3F7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+/* Button styling */
+button {
+  background-color: #3265f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4373ff;
+}
+
+button.secondary {
+  background-color: transparent;
+  border: 1px solid #3265f6;
+  color: #3265f6;
+}
+
+button.secondary:hover {
+  background-color: rgba(50, 101, 246, 0.1);
+}
+
+/* Stats cards (like the ones showing 20+, 80+, etc.) */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-card {
+  background-color: #0f1a3a; /* Slightly lighter blue for cards */
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Different colors for different stat cards */
+.blue-stat .stat-number {
+  color: #61dafb; /* Blue */
+}
+
+.purple-stat .stat-number {
+  color: #bb86fc; /* Purple */
+}
+
+.pink-stat .stat-number {
+  color: #ff6b9a; /* Pink */
+}
+
+.cyan-stat .stat-number {
+  color: #00e5ff; /* Cyan */
+}
+
+.stat-label {
+  color: #a0aec0;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Animation */
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .about-heading {
+    font-size: 2.5rem;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-logo {
+    height: 20vmin;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  .stat-card {
+    width: 90%;
+  }
+}

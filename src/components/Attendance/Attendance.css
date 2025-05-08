@@ -1,0 +1,483 @@
+/* Enhanced Attendance Form Styles */
+.attendance-form-container {
+
+    background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+    position: relative;
+  
+
+}
+.attendance-form-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #1e40af, #3b82f6);
+}
+
+
+.attendance-form-header {
+
+    margin-bottom: 25px;
+    color: #e6e8ed;
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 15px;
+  
+}
+
+.attendance-form-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  /* background: linear-gradient(90deg, #3b82f6, #38bdf8); */
+  border-radius: 3px;
+}
+
+/* Mode toggle styles - Improved tab design */
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  background-color: #1e293b;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  border: 1px solid #334155;
+}
+
+.mode-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.mode-button.active {
+  color: #f8fafc;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.mode-button:not(.active):hover {
+  color: #cbd5e1;
+  background-color: #334155;
+}
+
+/* Date input styles - More consistent and modern */
+.attendance-form-Date {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.attendance-form-Date input {
+  width: 110px;
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #334155;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.attendance-form-Date input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.attendance-form-Date input::placeholder {
+  color: #64748b;
+}
+
+/* Search button - Consistent with other buttons */
+.search-button {
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(29, 78, 216, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+.search-container {
+  margin-bottom: 2rem;
+}
+
+/* Student row styles - More interactive */
+.attendance-form-student {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background-color: #1e293b;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-form-student:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-color: #4b5563;
+  background-color: #263548;
+}
+
+.attendance-form-student span {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #f1f5f9;
+}
+
+/* Present/Absent button styles - More interactive */
+.attendance-form-button-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.attendance-form-button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  color: white;
+  opacity: 0.65;
+  position: relative;
+  overflow: hidden;
+}
+
+.attendance-form-button:first-child {
+  background-color: #15803d;
+}
+
+.attendance-form-button:last-child {
+  background-color: #b91c1c;
+}
+
+.attendance-form-button.active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.attendance-form-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.attendance-form-button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
+  }
+}
+
+/* Submit button styles - More polished */
+.attendance-form-buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.attendance-form-submits {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.attendance-form-submits:hover {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.5);
+}
+
+.attendance-form-submits:active {
+  transform: translateY(-1px);
+}
+
+/* Attendance list in view mode - More elegant display */
+.date-display {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #60a5fa;
+  font-weight: 600;
+  background-color: rgba(30, 58, 138, 0.2);
+  padding: 0.75rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #334155;
+}
+
+.attendance-list {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.attendance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  transition: all 0.25s ease;
+}
+
+.attendance-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background-color: #263548;
+}
+
+.student-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #f1f5f9;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-badge::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-badge.present {
+  background-color: rgba(6, 78, 59, 0.4);
+  color: #34d399;
+  border: 1px solid #065f46;
+}
+
+.status-badge.present::before {
+  background-color: #34d399;
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
+}
+
+.status-badge.absent {
+  background-color: rgba(127, 29, 29, 0.4);
+  color: #fca5a5;
+  border: 1px solid #991b1b;
+}
+
+.status-badge.absent::before {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* Empty state styles */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background-color: #1e293b;
+  border-radius: 12px;
+  border: 1px dashed #475569;
+}
+
+.empty-state p {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Scrollbar styling */
+.attendance-form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.attendance-form-container::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.attendance-form-container::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 4px;
+}
+
+.attendance-form-container::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+
+/* Responsive styles - Improved for all screen sizes */
+@media (max-width: 768px) {
+  .attendance-form-container {
+    padding: 1.5rem;
+    margin: 1.5rem 0.75rem;
+    border-radius: 0.75rem;
+  }
+  
+  .attendance-form-header {
+    font-size: 1.5rem;
+  }
+  
+  .attendance-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .attendance-form-buttons-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .attendance-form-submits {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .mode-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Print-friendly styles */
+@media print {
+  .attendance-form-container {
+    background: white;
+    color: black;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .mode-toggle, .search-container, .attendance-form-buttons-row {
+    display: none;
+  }
+  
+  .attendance-form-header {
+    color: black;
+    border-bottom-color: #ddd;
+  }
+  
+  .date-display {
+    color: black;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+  .attendance-list {
+    display: block;
+  }
+  
+  .attendance-item {
+    border: 1px solid #ddd;
+    background: white;
+    color: black;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+  
+  .status-badge {
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    color: black;
+  }
+}
+

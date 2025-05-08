@@ -1,0 +1,388 @@
+
+  :root {
+    --primary-bg: #121f36;
+    --secondary-bg: #1c2c45;
+    --text-light: #ffffff;
+    --text-gray: #a0aec0;
+    --accent-blue: #4a72cf;
+    --accent-gradient: linear-gradient(135deg, #4a72cf, #8a65d3);
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+  }
+  
+  .clubpage-container {
+    /* background-color: var(--primary-bg); */
+    min-height: 100vh;
+    padding: 2rem;
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* .clubpage-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    position: relative;
+  } */
+  
+  /* .clubpage-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .clubpage-header p {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+  }
+  
+  .clubpage-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+  }
+   */
+  .club-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .club-card {
+    background-color: var(--secondary-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .club-logo-container {
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f1828;
+  }
+  
+  .club-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+  }
+  
+  .club-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .club-name {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+  }
+  
+  .club-card:hover .club-logo {
+    transform: scale(1.15);
+  }
+  
+  .club-description {
+    color: var(--text-gray);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Modal styling - Updated to match image */
+  .club-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 2rem;
+  }
+  
+  .club-modal-content {
+    background-color: var(--primary-bg);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* Hide scrollbar */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .close-modal-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+  }
+  
+  .close-modal-btn:hover {
+    color: var(--accent-blue);
+  }
+  
+  .club-detail-header {
+    display: flex;
+    background-color: #0d192b;
+    padding: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Add a subtle gradient overlay */
+  .club-detail-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(13,25,43,0.9) 0%, rgba(13,25,43,0.8) 100%);
+    z-index: 1;
+  }
+  
+  .club-detail-logo {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 3rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 30px rgba(74, 114, 207, 0.5);
+    border: 4px solid rgba(74, 114, 207, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .club-detail-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .club-detail-title {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .club-detail-title h2 {
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(74, 114, 207, 0.3);
+  }
+  
+  .club-tagline {
+    color: var(--text-gray);
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+  
+  .club-detail-body {
+    padding: 2.5rem 3rem;
+    overflow-y: auto;
+  }
+  
+  .club-detail-body h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    position: relative;
+    padding-bottom: 0.7rem;
+  }
+  
+  .club-detail-body h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+  }
+  
+  .club-about-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .club-about-section p {
+    line-height: 1.8;
+    color: #e4e7eb;
+    font-size: 1.05rem;
+  }
+  
+  .event-list, .social-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .event-list li {
+    padding: 1rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+  }
+  
+  .event-list li:hover {
+    background-color: rgba(74, 114, 207, 0.15);
+    transform: translateX(5px);
+  }
+  
+  .event-list li::before {
+    content: '•';
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+  }
+  
+  .social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .social-list li {
+    flex-basis: calc(50% - 0.5rem);
+  }
+  
+  .social-list a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-light);
+    background-color: rgba(74, 114, 207, 0.2);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .social-list a:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .club-events-section, .club-social-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .club-detail-header {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    
+    .club-detail-logo {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+      width: 150px;
+      height: 150px;
+    }
+    
+    .club-detail-title h2 {
+      font-size: 2.5rem;
+    }
+    
+    .club-tagline {
+      font-size: 1.1rem;
+    }
+    
+    .social-list li {
+      flex-basis: 100%;
+    }
+    
+    .club-detail-body {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .clubpage-container {
+      padding: 1rem;
+    }
+    
+    .club-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .club-modal-backdrop {
+      padding: 1rem;
+    }
+  }
+
+
+
+
+  .club-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Keep your existing club-card styles */
+  }
+  
+  .club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }

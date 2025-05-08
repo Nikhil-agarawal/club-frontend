@@ -1,0 +1,547 @@
+/* NavBar.css */
+.navbar-container {
+  width: 90%;
+  max-width: 1400px;
+  height: auto;
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  z-index: 1000;
+  background-color: #192235;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.nav-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+  margin: 0 0.8rem;
+}
+
+.nav-links a, .nav-links button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a.active {
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 75%;
+  height: 3px;
+  background-color: white;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links button:hover {
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Create popup effect for submenu */
+.nav-links li:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #2c3e50;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Submenu popup styling */
+.nav-links li ul {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: linear-gradient(135deg, #192235, #2c3e50);
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+  flex-direction: column;
+}
+
+.nav-links li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-links li ul li {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.nav-links li ul a {
+  display: block;
+  font-size: large;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.nav-links li ul a:hover {
+  color: #3498db;
+  transform: translateX(5px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.icon-button:hover {
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Admin Login Button */
+.admin-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.admin-login-btn:hover {
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.mobile-menu-btn:hover {
+  color: #3498db;
+}
+
+/* Admin Dashboard Button - Improved Styling */
+.admin-dashboard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #3498db, #2c3e50); /* More vibrant gradient matching navbar theme */
+  color: white;
+  padding: 9px 20px;
+  border-radius: 8px; /* Match other UI elements' roundness */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-right: 15px; 
+  overflow: hidden;
+}
+
+/* Add subtle shine effect */
+.admin-dashboard-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.admin-dashboard-btn:hover::before {
+  left: 100%;
+}
+
+.admin-dashboard-btn:hover {
+  background: linear-gradient(135deg, #3498db, #8e44ad); /* Matching hover effect from navbar */
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+  transform: translateY(-3px);
+}
+
+.admin-dashboard-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+}
+
+.admin-dashboard-btn svg {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.admin-dashboard-btn:hover svg {
+  transform: rotate(15deg);
+}
+
+/* Add a subtle pulsing effect for the dashboard icon */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.admin-dashboard-btn svg {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+  .navbar-container {
+    width: 95%;
+    top: 15px;
+  }
+  
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .nav-links a, .nav-links button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .admin-dashboard-btn {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    width: 95%;
+    top: 10px;
+  }
+  
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    order: 3;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #192235;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-links li {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .nav-links a, .nav-links button {
+    width: 100%;
+    display: flex;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .nav-links a.active::after {
+    display: none;
+  }
+  
+  .nav-links a.active {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    border-radius: 6px;
+  }
+  
+  .nav-actions {
+    display: none;
+  }
+  
+  .admin-login-btn,
+  .logout-btn {
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-login-btn span,
+  .logout-btn span {
+    display: none;
+  }
+  
+  .admin-dashboard-btn {
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-dashboard-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    width: 100%;
+    top: 0;
+    border-radius: 0;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav-links {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.mobile-auth-buttons {
+  display: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav-link:hover {
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .nav-actions {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #192235;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-links li {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .nav-links a {
+    width: 100%;
+    display: block;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .nav-links a.active::after {
+    display: none;
+  }
+  
+  .nav-links a.active {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    border-radius: 6px;
+  }
+
+  .mobile-auth-buttons {
+    display: block;
+  }
+}

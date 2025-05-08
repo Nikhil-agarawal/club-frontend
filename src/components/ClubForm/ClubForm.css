@@ -1,0 +1,252 @@
+/* ClubForm.css - Unique selectors */
+.club-contact-form__wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edeef2;
+  padding: 20px;
+}
+
+.club-contact-form__container {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.club-contact-form {
+  padding: 40px;
+}
+
+.club-contact-form__title {
+  text-align: center;
+  color: #4a5568;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.club-contact-form__group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.club-contact-form__label {
+  display: block;
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.club-contact-form__input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  color: #4a5568;
+}
+
+.club-contact-form__input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: #fff;
+}
+
+.club-contact-form__textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.club-contact-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234a5568' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.club-contact-form__select option {
+  background: #fff;
+  color: #4a5568;
+  padding: 12px;
+}
+
+.club-contact-form__select option:disabled {
+  color: #a0aec0;
+  font-style: italic;
+  background: #f8fafc;
+}
+
+.club-contact-form__submit {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
+}
+
+.club-contact-form__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+}
+
+.club-contact-form__submit:active {
+  transform: translateY(0);
+}
+
+.club-contact-form__error {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.club-contact-form__divider {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+.club-contact-form__whatsapp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.club-contact-form__whatsapp-modal {
+  background: #1a1f3c;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.club-contact-form__whatsapp-content {
+  text-align: center;
+  color: #fff;
+}
+
+.club-contact-form__whatsapp-icon {
+  font-size: 4rem;
+  color: #25D366;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+.club-contact-form__whatsapp-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.club-contact-form__whatsapp-text {
+  margin-bottom: 1rem;
+  color: #a0aec0;
+  line-height: 1.5;
+}
+
+.club-contact-form__download-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.club-contact-form__download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.club-contact-form__close-btn {
+  background: transparent;
+  color: #a0aec0;
+  border: 1px solid #a0aec0;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.club-contact-form__close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .club-contact-form__container {
+    margin: 20px;
+  }
+  
+  .club-contact-form {
+    padding: 30px;
+  }
+  
+  .club-contact-form__input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .club-contact-form__submit {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

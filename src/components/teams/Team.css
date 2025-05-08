@@ -1,0 +1,268 @@
+
+/* Team.css - Professional Blue Theme */
+
+:root {
+  --primary-blue: #0056b3;
+  --secondary-blue: #007bff;
+  --light-blue: #e6f2ff;
+  --accent-blue: #00a8e8;
+  --dark-blue: #003366;
+  --white: #ffffff;
+  --light-gray: #f7f9fc;
+  --gray: #ced4da;
+  --dark-gray: #495057;
+  --shadow: 0 4px 12px rgba(0, 86, 179, 0.15);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: var(--dark-gray);
+}
+
+.dropdown-menu {
+  width: 550px;
+  margin: 50px auto;
+  padding: 35px 45px;
+  background: linear-gradient(145deg, #1a4980 0%, #0e2c4e 100%);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  border-top: 4px solid var(--accent-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #00c6ff 0%, transparent 70%);
+  border-radius: 0 0 0 150px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.dropdown-menu::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(315deg, #5558ff 0%, transparent 70%);
+  border-radius: 0 120px 0 0;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.dropdown-menu h1 {
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.dropdown-menu h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), #80c2ff);
+  border-radius: 3px;
+}
+
+.dropdown-menu__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-menu__form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.dropdown-menu__form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 15px;
+}
+
+.dropdown-menu__form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 5px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.dropdown-menu__form input:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  color: #000000;
+  -webkit-text-fill-color: #000000;
+}
+
+.dropdown-menu__form select {
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  width: 100%;
+  transition: var(--transition);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23495057' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.dropdown-menu__form select:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.dropdown-menu__form select option {
+  font-size: 15px;
+  background-color: var(--white);
+  color: #000000;
+  font-weight: 500;
+}
+
+.dropdown-menu__form select option:first-child {
+  color: #666666;
+}
+
+.dropdown-menu__form button,
+.add {
+  margin-top: 20px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.dropdown-menu__form button:hover,
+.add:hover {
+  background: linear-gradient(90deg, var(--secondary-blue), var(--accent-blue));
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.dropdown-menu__form button:active,
+.add:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 86, 179, 0.2);
+}
+
+.dropdown-menu__form button[type="button"] {
+  background: linear-gradient(90deg, var(--gray), #adb5bd);
+  color: var(--white);
+  margin-left: 10px;
+}
+
+.team-members {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.team-members h2 {
+  color: var(--white);
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.team-members table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.team-members table th {
+  background-color: rgba(0, 123, 255, 0.3);
+  color: var(--white);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+.team-members table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.team-members table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.team-members table tr:hover {
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+.team-members .add {
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--primary-blue));
+  width: auto;
+  display: block;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .dropdown-menu {
+    width: 90%;
+    padding: 25px;
+  }
+  
+  .dropdown-menu__form input,
+  .dropdown-menu__form select {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .dropdown-menu__form button,
+  .add {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}

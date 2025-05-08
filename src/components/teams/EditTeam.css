@@ -1,0 +1,96 @@
+.dropdown-menu-edit {
+    width: 500px;
+    margin: 140px auto;
+    padding: 45px;
+    background-color: #f1f1f1;
+    color: #161616;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    border-radius: 35px;
+  }
+  
+  .dropdown-menu__form-edit {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-bottom: 30px;
+  }
+  .dropdown-menu__form-edit div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-menu__form-edit label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .dropdown-menu__form-edit input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .dropdown-menu__form-edit button {
+    /* padding: 10px 20px; */
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    /* border-radius: 5px; */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #0077cc;
+    padding: 8px 16px;
+    border-radius: 7px;
+  }
+  
+  .dropdown-menu__form-edit button:hover {
+    background-color: #007AA3;
+  }
+  
+  .dropdown-menu__form-edit button[type="button"] {
+    background-color: #ccc;
+    color: #000;
+    margin-left: 10px;
+  }
+
+  .dropdown-menu__form-edit select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+    /* max-width: 400px; */
+    margin-top: 10px;
+  }
+  
+  .dropdown-menu__form-edit select option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .dropdown-menu__form-edit select option:first-child {
+    color: #999;
+  }
+  
+  .final {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #0077cc;
+    padding: 8px 16px;
+    border-radius: 7px;
+  
+  }
